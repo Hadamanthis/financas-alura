@@ -1,4 +1,4 @@
-package br.com.caelum.financas.teste;
+package br.com.caelum.financas.util;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -10,9 +10,8 @@ import br.com.caelum.financas.modelo.Categoria;
 import br.com.caelum.financas.modelo.Conta;
 import br.com.caelum.financas.modelo.Movimentacao;
 import br.com.caelum.financas.modelo.TipoMovimentacao;
-import br.com.caelum.financas.util.JPAUtil;
 
-public class TesteMovimentacoesComCategoria {
+public class PopulaMovimentacoesComCategoria {
 
 	public static void main(String[] args) {
 		
@@ -31,9 +30,12 @@ public class TesteMovimentacoesComCategoria {
 		
 		movimentacao1.setConta(conta);
 		
+		Calendar amanha = Calendar.getInstance();
+		amanha.add(Calendar.DAY_OF_MONTH, 1);
+		
 		Movimentacao movimentacao2 = new Movimentacao();
-		movimentacao2.setData(Calendar.getInstance()); // Hoje
-		movimentacao2.setDescricao("Viagem ao .");
+		movimentacao2.setData(amanha); // Amanhã
+		movimentacao2.setDescricao("Viagem ao RJ.");
 		movimentacao2.setTipoMovimentacao(TipoMovimentacao.SAIDA);
 		movimentacao2.setValor(new BigDecimal("300.0"));
 		movimentacao2.setCategoria(Arrays.asList(categoria1, categoria2));
