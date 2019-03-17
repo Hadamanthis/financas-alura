@@ -25,7 +25,7 @@ public class TesteJPQL {
 				+ "and m.tipoMovimentacao = :pTipoMovimentacao "
 				+ "order by m.valor desc";
 		Query query = em.createQuery(jpql);
-		query.setParameter("pConta", conta.getId());
+		query.setParameter("pConta", conta);
 		query.setParameter("pTipoMovimentacao", TipoMovimentacao.ENTRADA);
 		
 		List<Movimentacao> movimentacoes = query.getResultList();

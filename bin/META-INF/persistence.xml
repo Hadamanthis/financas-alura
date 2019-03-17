@@ -20,8 +20,9 @@
 				value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:postgresql://localhost:5432/financas" />
-			<property name="javax.persistence.jdbc.user" value="geovane" />
-			<property name="javax.persistence.jdbc.password" value="123456" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="senha123" />
+			<!-- Login: geovane; senha: 123456 -->
 			
 			<!-- Configurações específicas do Hibernate -->
 			<property name="hibernate.dialect"
